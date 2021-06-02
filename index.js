@@ -5,7 +5,8 @@ const app = express();
 
 app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.json())
+app.use(bodyParser.json());
+app.use(bodyParser.raw({limit:  '10mb'}))
 
 const PORT = process.env.PORT || 8080;
 let responseObj = {}, referenceData = {};
