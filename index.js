@@ -18,7 +18,7 @@ app.post('/codingtest1',(req,res) => {
         if(inputPayload != null){
             referenceData = inputPayload.referenceData;
             responseObj = inputPayload.payload;
-            responseObj = updateResponse(responseObj.value, referenceData);
+            responseObj.value = updateResponse(responseObj.value, referenceData);
             res.json(responseObj);
         }
         else {
